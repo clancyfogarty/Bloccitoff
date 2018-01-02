@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get "log_in" => "sessions#new", :as => "log_in"
+
+  get "sign_up" => "users#new", :as => "sign_up"
+  root :to => "users#new"
+
+  resources :users
+  resources :sessions
+  resources :todos, only: [:new, :create, :show]
 end
