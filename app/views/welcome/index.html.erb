@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+  <div class='row'><%= link_to "Sign out", destroy_user_session_path, method: :delete %></div>
+  <h1>Welcome, </h1>
+  <p><%= current_user.email %>!</p>
+  <p>What would you like to do?</p>
+<% else %>
+  <h1>Welcome, </h1>
+  <p>please <%= link_to "sign in", new_user_session_path %>, or <%= link_to "sign up", new_user_registration_path %></p>
+<% end %>
