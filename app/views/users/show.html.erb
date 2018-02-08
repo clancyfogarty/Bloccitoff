@@ -1,0 +1,7 @@
+<div class='container'>
+  <%= link_to "Home page", authenticated_index_path %> |
+  <%= link_to "Sign out", destroy_user_session_path%>
+  <div>
+    <h2>Hello, <%= @user.name %></h2>
+  </div>
+</div>

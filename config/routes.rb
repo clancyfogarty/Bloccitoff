@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  get "log_in" => "sessions#new", :as => "log_in"
 
-  get "sign_up" => "users#new", :as => "sign_up"
-  root :to => "users#new"
+  devise_for :users
+  resources :users, only: [:show]
 
-  resources :users
-  resources :sessions
-  resources :todos, only: [:new, :create, :show]
+  resources :todos
+
+  get 'about' => 'welcome#about'
+
+  root to: 'welcome#index'
+
 end

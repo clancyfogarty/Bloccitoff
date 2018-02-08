@@ -1,6 +1,7 @@
 <% if user_signed_in? %>
   <div class='row'><%= link_to "Sign out", destroy_user_session_path, method: :delete %></div>
-  <h1>Welcome, </h1>
+  <h1>BloccitOff</h1>
+  <p>BloccitOff is a self destructing checklist for all your todo's!</p>
   <p><%= current_user.email %>!</p>
   <p>What would you like to do?</p>
 <% else %>
