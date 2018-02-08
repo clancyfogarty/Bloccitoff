@@ -1,8 +1,4 @@
-<%= content_tag :div, class: 'media', id: "item-#{item.id}" do %>
-  <div class="media-body">
-    <br>
-
-    <p><%= item.name %> <%= time_ago_in_words(item.created_at) %></p>
-
-  </div>
-<% end %>
+<li class="list-group-item" style="cursor: pointer;">
+    <input type="checkbox">  <%= item.name %>  <n class="half-tone"> - <%= time_ago_in_words(item.created_at) %> - </n>
+    <%= link_to "Delete", user_item_path(current_user, item), :class => "btn btn-danger btn-xs pull-right in-line", method: :delete, date: { confirm: "Are you shure?" } %>
+</li> 

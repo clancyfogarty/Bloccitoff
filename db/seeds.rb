@@ -7,10 +7,3 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 users = User.all
-
-50.times do
-  Item.create(
-    name: Faker::Lorem.sentence,
-    user: users.sample
-  )
-end
