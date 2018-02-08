@@ -1,0 +1,8 @@
+<%= content_tag :div, class: 'media', id: "item-#{item.id}" do %>
+  <div class="media-body">
+    <br>
+
+    <p><%= item.name %> <%= time_ago_in_words(item.created_at) %></p>
+
+  </div>
+<% end %>

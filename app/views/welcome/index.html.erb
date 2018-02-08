@@ -1,9 +1,9 @@
-<% if user_signed_in? %>
-  <div class='row'><%= link_to "Sign out", destroy_user_session_path, method: :delete %></div>
-  <h1>Welcome, </h1>
-  <p><%= current_user.email %>!</p>
-  <p>What would you like to do?</p>
-<% else %>
-  <h1>Welcome, </h1>
-  <p>please <%= link_to "sign in", new_user_session_path %>, or <%= link_to "sign up", new_user_registration_path %></p>
-<% end %>
+<br>
+<div class="jumbotron">
+  <h1>BloccitOff</h1>
+  <p>BloccitOff is a self destructing checklist for all your todo's!</p>
+  <p>
+      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %> or
+      <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %> today!
+  </p>
+</div>
