@@ -1,14 +1,13 @@
 <% if @user %>
   <h2 class="media-heading">A Checklist for <%= @user.name %></h2>
   <div class="well">
-    <div class="col-md-12">
       <ul class="list-group checked-list-box">
         <% @items.each do |item| %>
-          <%= render partial: 'items/item', locals: { item: item} %>
+          <%= render partial: 'items/item', locals: { item: item } %>
         <% end %>
         <%= render partial: 'items/form', locals: { item: current_user.items.build, user: @user } %>
       </ul>
-    </div>
+    <div class='js-items-count'><%= pluralize(@user.items.count, 'item') %></div>
   </div>
 <% else %>
   <br>

@@ -1,4 +1,4 @@
-<li class="list-group-item" style="cursor: pointer;">
-    <input type="checkbox">  <%= item.name %>  <n class="half-tone"> - <%= time_ago_in_words(item.created_at) %> - </n>
-    <%= link_to "Delete", user_item_path(current_user, item), :class => "btn btn-danger btn-xs pull-right in-line", method: :delete, date: { confirm: "Are you shure?" } %>
-</li> 
+<li class="list-group-item" style="cursor: pointer;" id=<%="item-#{item.id}"%> >
+  <%= link_to "", user_item_path(current_user, item), method: :delete, class: "glyphicon glyphicon-ok", remote: true, data: { confirm: "This task better be done...." }%>
+  <%= item.name %><n class="half-tone"> - <%= item.days_left %> days left - </n>
+</li>

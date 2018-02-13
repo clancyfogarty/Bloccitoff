@@ -21,10 +21,11 @@ end
 
 users = User.all
 
-5.times do
+100.times do
   Item.create(
     user: users.sample,
-    name: Faker::Lorem.sentence
+    name: Faker::Lorem.sentence,
+    created_at: Faker::Date.between(14.days.ago, Date.today)
  )
 end
 
